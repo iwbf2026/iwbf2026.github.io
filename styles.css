@@ -1,108 +1,36 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Header */
-header {
-    background: linear-gradient(135deg, #003366, #0066cc);
-    color: white;
+/* Top Navigation Menu */
+.topnav {
+    background: #003366;
     text-align: center;
-    padding: 40px 20px;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 1.2em;
-    font-weight: 300;
-}
-
-/* Navigation */
-nav ul {
+.topnav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-nav ul li {
+.topnav ul li {
     display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
+.topnav ul li a {
     text-decoration: none;
     color: white;
     font-weight: 600;
     font-size: 1.1em;
-    transition: color 0.3s;
+    padding: 10px;
+    transition: background 0.3s;
 }
 
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-/* Sections */
-.section {
-    padding: 60px 20px;
-    text-align: center;
-    background: white;
-}
-
-.section.alternate {
-    background: #e9f1f7;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Call for Papers */
-h2 {
+.topnav ul li a:hover {
+    background: #ffcc00;
     color: #003366;
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-ul {
-    text-align: left;
-    display: inline-block;
-    margin: 20px 0;
-    padding: 0;
-}
-
-ul li {
-    margin: 10px 0;
-    font-size: 1.1em;
-}
-
-/* Contact */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #003366;
-    color: white;
-}
-
-footer a {
-    color: #ffcc00;
-    font-weight: bold;
+    border-radius: 5px;
 }
