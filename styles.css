@@ -34,6 +34,11 @@
     color: #003366;
     border-radius: 5px;
 } */
+
+
+
+
+
 /* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Press+Start+2P&display=swap');
 
@@ -69,7 +74,7 @@ nav ul {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    flex-wrap: wrap; /* Allow menu items to wrap */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -97,72 +102,16 @@ main {
     position: relative;
 }
 
-.intro-section {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-top: 120px;
-    width: 100%; /* Use full width for mobile */
-    max-width: 760px; /* Limit maximum width */
-    margin-left: auto;
-    margin-right: auto;
+section {
+    margin-bottom: 40px;
 }
 
-.image-container {
-    flex: 0 0 200px;
-    margin-right: 20px;
-}
-
-.portrait {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.text-container {
-    flex: 1;
-    text-align: justify;
-    font-size: 0.75em;
+section h2 {
+    margin-bottom: 10px;
 }
 
 ul {
     padding-left: 20px;
-}
-
-blockquote.top-right-quote {
-    font-style: italic;
-    color: #888;
-    font-size: 0.7em;
-    text-align: right;
-    width: auto; /* Adjust to auto for responsiveness */
-    max-width: 360px; /* Limit maximum width */
-    padding: 10px 20px;
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0 auto 5px auto;
-    position: absolute;
-    top: 0;
-    right: 20px;
-}
-
-blockquote.top-right-quote a {
-    color: #007acc;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-blockquote.top-right-quote a:hover {
-    color: #005f99;
-}
-
-.quote-author {
-    display: block;
 }
 
 footer {
@@ -171,229 +120,20 @@ footer {
     background: #ffffff;
     border-top: 1px solid #ddd;
     color: #777;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
 }
 
-form {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #555;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    font-size: 1em;
-}
-
-form button {
-    background: #007acc;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 1em;
-    transition: background 0.3s;
-}
-
-form button:hover {
-    background: #005f99;
-}
-
-/* Global link styles */
-a {
-    color: #007acc;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #005f99;
-}
-
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 20px;
-}
-
-.contact-icons a {
-    color: #007acc;
-    font-size: 1.5em;
-    text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.contact-icons a:hover {
-    color: #005f99;
-    transform: scale(1.1);
-}
-
-.contact-icons i {
-    margin: 0 10px;
-}
-
-.news-section {
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 800px;
-    margin: 40px auto;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.news-item {
-    width: 100%;
-    transition: opacity 1s ease-in-out;
-    opacity: 0;
-    margin-top: 10px;
-    display: none;
-}
-
-.news-item.active {
-    opacity: 1;
-    display: block;
-}
-
-.news-title {
-    font-weight: bold;
-    color: #333;
-    font-size: 0.8em;
-}
-
-.news-content {
-    margin-top: 5px;
-    color: #555;
-    font-size: 0.75em;
-    text-align: justify;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.news-link {
-    color: #007acc;
-    text-decoration: none;
-    transition: color 0.3s;
-    display: block;
-    text-align: right;
-    margin-right: 20px;
-    font-size: 0.7em;
-}
-
-.news-link:hover {
-    color: #005f99;
-}
-
-.news-navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-}
-
-.nav-dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.nav-dot.active {
-    background-color: #555;
-}
-
-.publication-list {
-    list-style-type: none;
-    padding: 0;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.publication-item {
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 15px;
-    transition: transform 0.2s;
-}
-
-.publication-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.publication-title {
-    font-weight: bold;
-    color: #333;
-}
-
-.publication-details {
-    color: #555;
-    margin-top: 5px;
-    font-size: 0.9em;
-}
-
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 768px) {
-    .intro-section, .news-section {
+    nav ul {
         flex-direction: column;
-        margin-top: 20px; /* Reduced margin for mobile */
-        width: 100%; /* Full width for small screens */
-        padding: 15px;
     }
-
-    .image-container {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .text-container {
-        font-size: 0.9em; /* Larger font for better readability */
-    }
-
     nav ul li {
-        margin: 5px; /* Reduced margin for menu items */
+        margin: 5px 0;
     }
-
-    footer {
-        font-size: 12px;
-        padding: 15px;
-    }
-
-    blockquote.top-right-quote {
-        position: static;
-        margin-top: 20px;
-        width: 100%;
-        text-align: center;
-        right: auto;
+    main {
+        margin: 20px;
     }
 }
+
