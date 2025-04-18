@@ -108,21 +108,32 @@
     const slideB = document.getElementById('slideB');
 
     function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      const currentImg = showingA ? slideA : slideB;
-      const nextImg    = showingA ? slideB : slideA;
+    // pick a random next index (different from current)
+    let nextIndex;
+    do {
+      nextIndex = Math.floor(Math.random() * slides.length);
+    } while (nextIndex === currentIndex && slides.length > 1);
+    currentIndex = nextIndex;
 
-      nextImg.src = slides[currentIndex];
-      nextImg.classList.remove('zoom');
-      void nextImg.offsetWidth;
-      nextImg.classList.add('zoom');
+    // determine which img is currently visible vs hidden
+    const currentImg = showingA ? slideA : slideB;
+    const nextImg    = showingA ? slideB : slideA;
 
-      currentImg.classList.remove('visible');
-      nextImg.classList.add('visible');
+    // set the new src on the hidden img
+    nextImg.src = slides[currentIndex];
 
-      showingA = !showingA;
-    }
+    // restart zoom animation on nextImg
+    nextImg.classList.remove('zoom');
+    void nextImg.offsetWidth;    // trigger reflow
+    nextImg.classList.add('zoom');
 
+    // cross‑fade: hide currentImg, show nextImg
+    currentImg.classList.remove('visible');
+    nextImg.classList.add('visible');
+
+    // flip the flag for the next cycle
+    showingA = !showingA;
+  }
     slideA.addEventListener('load', () => slideA.classList.add('zoom'));
     setInterval(nextSlide, slideInterval);
   </script>
