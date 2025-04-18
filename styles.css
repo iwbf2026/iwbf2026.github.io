@@ -134,6 +134,11 @@ ul {
     margin-top: 0;
 }
 
+/* 2) Center all column headings */
+.four-column .col h2 {
+  text-align: center;
+}
+
 /* placeholder styling for sponsor logos */
 .sponsor-logos {
     display: flex;
@@ -158,7 +163,7 @@ footer {
     width: 100%;
     height: 500px;               /* adjusted to 600px */
     overflow: hidden;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .slideshow img.slide {
