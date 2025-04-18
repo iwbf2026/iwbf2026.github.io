@@ -138,28 +138,32 @@ footer {
     }
 }
 
-/* slideshow container */
+/* ─── Slideshow Container ─── */
 .slideshow {
   position: relative;
   width: 100%;
-  height: 400px;      /* adjust to taste */
+  height: 400px;           /* adjust as you like */
   overflow: hidden;
   margin-bottom: 2rem;
 }
 
+/* base image + fade transition */
 .slideshow img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform-origin: center center;
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* fade in/out */
 }
 
-/* simple zoom‑in animation */
+/* ─── Zoom Keyframes ─── */
 @keyframes zoomIn {
   from { transform: scale(1); }
   to   { transform: scale(1.1); }
 }
 
+/* apply zoom on each slide */
 .slideshow img.zoom {
   animation: zoomIn 5s ease-in-out forwards;
 }

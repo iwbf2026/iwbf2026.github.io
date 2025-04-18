@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- ─── HEADER & NAV ─── -->
   <header>
     <h1>14th International Workshop on Biometrics and Forensics</h1>
     <p>April 23–24, 2026 | EURECOM, French Riviera</p>
@@ -23,7 +24,7 @@
     </nav>
   </header>
 
-  <!-- slideshow -->
+  <!-- ─── SLIDESHOW ─── -->
   <div class="slideshow">
     <img
       id="slideshow-image"
@@ -33,33 +34,7 @@
     >
   </div>
 
-  <script>
-    const slides = [
-      'images/slide1.jpg',
-      'images/slide2.jpg',
-      'images/slide3.jpg'
-      // …etc.
-    ];
-    const slideInterval = 5000;  // 5s per slide
-    let current = 0;
-    const img = document.getElementById('slideshow-image');
-
-    function nextSlide() {
-      current = (current + 1) % slides.length;
-      img.src = slides[current];
-      // restart zoom animation
-      img.classList.remove('zoom');
-      void img.offsetWidth;
-      img.classList.add('zoom');
-    }
-
-    // kick off zoom on initial load
-    img.addEventListener('load', () => img.classList.add('zoom'));
-
-    setInterval(nextSlide, slideInterval);
-  </script>
-
-
+  <!-- ─── MAIN CONTENT ─── -->
   <main id="about">
     <section>
       <h2>About IWBF 2026</h2>
@@ -67,10 +42,12 @@
     </section>
   </main>
 
+  <!-- ─── FOOTER ─── -->
   <footer>
     <p>© 2026 IWBF | Hosted on <a href="https://github.com/iwbf2026/iwbf2026.github.io">GitHub Pages</a></p>
   </footer>
 
+  <!-- ─── SLIDESHOW SCRIPT ─── -->
   <script>
     const slides = [
       'images/slide1.jpg',
@@ -89,46 +66,32 @@
       'images/slide14.jpg',
       'images/slide15.jpg',
       'images/slide16.jpg'
-      // …add as many filenames as you like
+      // …add more as needed
     ];
-    const slideInterval = 5000;   // time per slide in ms
-    const fadeDuration  = 1000;   // fade in/out time in ms
-    const panClasses    = ['panUp','panDown','panLeft','panRight'];
-    let currentIndex    = 0;
-    const imgEl         = document.getElementById('slideshow-image');
-
-    function pickNextIndex() {
-      let next;
-      do { next = Math.floor(Math.random()*slides.length); }
-      while (next === currentIndex && slides.length>1);
-      return next;
-    }
+    const slideInterval = 5000; // total time per slide (ms)
+    const fadeDuration  = 1000; // fade out/in duration (ms)
+    let current = 0;
+    const img = document.getElementById('slideshow-image');
 
     function nextSlide() {
-      // Fade out
-      imgEl.style.opacity = 0;
-      // After fadeDuration, swap image & start pan+fade in
+      // fade out
+      img.style.opacity = 0;
+      // after fadeDuration, swap image, restart zoom, fade in
       setTimeout(() => {
-        // pick a new random slide
-        currentIndex = pickNextIndex();
-        imgEl.src    = slides[currentIndex];
-        // pick a random pan class
-        const pan = panClasses[Math.floor(Math.random()*panClasses.length)];
-        imgEl.className = pan; 
-        // fade back in
-        imgEl.style.opacity = 1;
+        current = (current + 1) % slides.length;
+        img.src = slides[current];
+        img.classList.remove('zoom');
+        void img.offsetWidth;
+        img.classList.add('zoom');
+        img.style.opacity = 1;
       }, fadeDuration);
     }
 
-    // when first image loads, kick off a random pan
-    imgEl.addEventListener('load', () => {
-      const pan = panClasses[Math.floor(Math.random()*panClasses.length)];
-      imgEl.className = pan;
-    });
+    // kick off initial zoom when the first image loads
+    img.addEventListener('load', () => img.classList.add('zoom'));
 
-    // start the cycle
+    // schedule slide changes
     setInterval(nextSlide, slideInterval);
   </script>
-
 </body>
 </html>
