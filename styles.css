@@ -30,7 +30,11 @@ body {
 
 /* ─── HEADER & NAVIGATION ─── */
 header {
-    background: linear-gradient(to right, var(--nav-bg-start), var(--nav-bg-end));
+    background: radial-gradient(
+      circle at center,
+      var(--nav-bg-start) 0%,
+      var(--nav-bg-end) 100%
+    );
     padding: 1rem 0;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     position: sticky;
