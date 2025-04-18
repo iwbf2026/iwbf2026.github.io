@@ -1,3 +1,8 @@
+/* make padding/border count inside width everywhere */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* ─── Font Import & Variables ─── */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
