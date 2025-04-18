@@ -142,19 +142,24 @@ footer {
 .slideshow {
   position: relative;
   width: 100%;
-  height: 400px;           /* adjust as you like */
+  height: 400px;           /* tweak as needed */
   overflow: hidden;
   margin-bottom: 2rem;
 }
 
-/* base image + fade transition */
-.slideshow img {
+.slideshow img.slide {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;  /* cross‑fade */
   transform-origin: center center;
+}
+
+.slideshow img.visible {
   opacity: 1;
-  transition: opacity 1s ease-in-out; /* fade in/out */
 }
 
 /* ─── Zoom Keyframes ─── */
@@ -163,7 +168,7 @@ footer {
   to   { transform: scale(1.1); }
 }
 
-/* apply zoom on each slide */
 .slideshow img.zoom {
   animation: zoomIn 5s ease-in-out forwards;
 }
+

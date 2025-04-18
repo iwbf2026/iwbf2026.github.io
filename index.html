@@ -68,29 +68,40 @@
       'images/slide16.jpg'
       // …add more as needed
     ];
-    const slideInterval = 5000; // total time per slide (ms)
-    const fadeDuration  = 1000; // fade out/in duration (ms)
-    let current = 0;
-    const img = document.getElementById('slideshow-image');
+    const slideInterval = 5000; // total time per slide
+    let currentIndex = 0;
+    let showingA = true;
+
+    const slideA = document.getElementById('slideA');
+    const slideB = document.getElementById('slideB');
 
     function nextSlide() {
-      // fade out
-      img.style.opacity = 0;
-      // after fadeDuration, swap image, restart zoom, fade in
-      setTimeout(() => {
-        current = (current + 1) % slides.length;
-        img.src = slides[current];
-        img.classList.remove('zoom');
-        void img.offsetWidth;
-        img.classList.add('zoom');
-        img.style.opacity = 1;
-      }, fadeDuration);
+      // advance index
+      currentIndex = (currentIndex + 1) % slides.length;
+
+      // pick which <img> is coming in/out
+      const currentImg = showingA ? slideA : slideB;
+      const nextImg    = showingA ? slideB : slideA;
+
+      // set next src (in case it’s changed)
+      nextImg.src = slides[currentIndex];
+
+      // restart zoom on the incoming image
+      nextImg.classList.remove('zoom');
+      void nextImg.offsetWidth;
+      nextImg.classList.add('zoom');
+
+      // cross‑fade
+      currentImg.classList.remove('visible');
+      nextImg.classList.add('visible');
+
+      // flip for next cycle
+      showingA = !showingA;
     }
 
-    // kick off initial zoom when the first image loads
-    img.addEventListener('load', () => img.classList.add('zoom'));
+    // kick off the zoom animation on the very first image
+    slideA.addEventListener('load', () => slideA.classList.add('zoom'));
 
-    // schedule slide changes
     setInterval(nextSlide, slideInterval);
   </script>
 </body>
