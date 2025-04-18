@@ -114,18 +114,21 @@ ul {
 }
 
 /* ─── FOUR‑COLUMN SECTION ─── */
+/* Four‑column section – full‑width without overflow */
 .four-column {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    width: 100%;
-    margin: 0;
-    padding: 2rem 1rem; 
+  display: grid;
+  /* ensure columns never force overflow */
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 2rem;
+  margin: 0;
+  padding: 2rem 1rem;     /* keeps your gutters, but with box‑sizing it won’t overflow */
+  box-sizing: border-box; /* include padding in its width calculation */
 }
+
 
 .four-column .col {
     background: #ffffff;
-    padding: 0.1rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
