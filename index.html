@@ -23,7 +23,7 @@
     </nav>
   </header>
 
-  <!-- slideshow -->
+  <!-- Slideshow -->
   <div class="slideshow">
     <img id="slideshow-image" src="images/slide1.jpg" alt="Slideshow frame">
   </div>
@@ -59,23 +59,42 @@
       'images/slide16.jpg'
       // …add as many filenames as you like
     ];
-    const slideInterval = 5000; // milliseconds between slides
-    let current = 0;
-    const img = document.getElementById('slideshow-image');
+    const slideInterval = 5000;   // time per slide in ms
+    const fadeDuration  = 1000;   // fade in/out time in ms
+    const panClasses    = ['panUp','panDown','panLeft','panRight'];
+    let currentIndex    = 0;
+    const imgEl         = document.getElementById('slideshow-image');
 
-    function nextSlide() {
-      current = (current + 1) % slides.length;
-      img.src = slides[current];
-      // restart the zoom animation
-      img.classList.remove('zoom');
-      void img.offsetWidth;
-      img.classList.add('zoom');
+    function pickNextIndex() {
+      let next;
+      do { next = Math.floor(Math.random()*slides.length); }
+      while (next === currentIndex && slides.length>1);
+      return next;
     }
 
-    // kick off the first zoom when the first image loads
-    img.addEventListener('load', () => img.classList.add('zoom'));
+    function nextSlide() {
+      // Fade out
+      imgEl.style.opacity = 0;
+      // After fadeDuration, swap image & start pan+fade in
+      setTimeout(() => {
+        // pick a new random slide
+        currentIndex = pickNextIndex();
+        imgEl.src    = slides[currentIndex];
+        // pick a random pan class
+        const pan = panClasses[Math.floor(Math.random()*panClasses.length)];
+        imgEl.className = pan; 
+        // fade back in
+        imgEl.style.opacity = 1;
+      }, fadeDuration);
+    }
 
-    // then every interval swap & zoom
+    // when first image loads, kick off a random pan
+    imgEl.addEventListener('load', () => {
+      const pan = panClasses[Math.floor(Math.random()*panClasses.length)];
+      imgEl.className = pan;
+    });
+
+    // start the cycle
     setInterval(nextSlide, slideInterval);
   </script>
 
