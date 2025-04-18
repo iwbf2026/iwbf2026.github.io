@@ -175,7 +175,7 @@ footer {
     width: 100%;
     height: 500px;               /* adjusted to 600px */
     overflow: hidden;
-    margin-bottom: 0.0rem;
+    margin-bottom: 0;
 }
 
 .slideshow img.slide {

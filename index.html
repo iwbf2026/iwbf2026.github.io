@@ -100,59 +100,41 @@
       'images/slide16.jpg'
       // …add more as needed
     ];
-  const slideInterval = 5000; // ms per slide
-  let showingA  = true;
-  const slideA  = document.getElementById('slideA');
-  const slideB  = document.getElementById('slideB');
+    const slideInterval = 5000; // time per slide (ms)
+    let currentIndex = 0;
+    let showingA     = true;
 
-  // Fisher–Yates shuffle
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+    const slideA = document.getElementById('slideA');
+    const slideB = document.getElementById('slideB');
+
+    function nextSlide() {
+      // move to the next slide in sequence
+      currentIndex = (currentIndex + 1) % slides.length;
+
+      const currentImg = showingA ? slideA : slideB;
+      const nextImg    = showingA ? slideB : slideA;
+
+      // update the hidden image’s source
+      nextImg.src = slides[currentIndex];
+
+      // restart the zoom animation
+      nextImg.classList.remove('zoom');
+      void nextImg.offsetWidth;  // force reflow
+      nextImg.classList.add('zoom');
+
+      // cross‑fade between images
+      currentImg.classList.remove('visible');
+      nextImg.classList.add('visible');
+
+      // flip for next time
+      showingA = !showingA;
     }
-    return array;
-  }
 
-  // Initialize a shuffled “deck” of slides
-  let deck = shuffleArray(slides.slice());
+    // kick off the first zoom when slideA loads
+    slideA.addEventListener('load', () => slideA.classList.add('zoom'));
 
-  function nextSlide() {
-    // If we’ve exhausted the deck, reshuffle
-    if (deck.length === 0) {
-      deck = shuffleArray(slides.slice());
-    }
-
-    // Draw the next slide from the deck
-    const nextSrc = deck.shift();
-
-    // Determine which <img> is visible vs hidden
-    const currentImg = showingA ? slideA : slideB;
-    const nextImg    = showingA ? slideB : slideA;
-
-    // Set new source on the hidden image
-    nextImg.src = nextSrc;
-
-    // Restart zoom animation
-    nextImg.classList.remove('zoom');
-    void nextImg.offsetWidth;
-    nextImg.classList.add('zoom');
-
-    // Cross‑fade
-    currentImg.classList.remove('visible');
-    nextImg.classList.add('visible');
-
-    // Flip for the next cycle
-    showingA = !showingA;
-  }
-
-  // Kick off the first zoom when the first image loads
-  slideA.addEventListener('load', () => {
-    slideA.classList.add('zoom');
-  });
-
-  // Start slide cycling
-  setInterval(nextSlide, slideInterval);
-</script>
+    // start cycling
+    setInterval(nextSlide, slideInterval);
+  </script>
 </body>
 </html>
