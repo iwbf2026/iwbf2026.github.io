@@ -51,7 +51,7 @@ header {
   width: 6rem;
   height: 6rem;
   background: rgba(255, 0, 0, 0.1);
-  border: 3px dashed #d00;
+  border: 1px dashed #d00;
   border-radius: 50%;
   display: flex;
   align-items: center;
