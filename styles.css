@@ -169,6 +169,13 @@ ul {
     justify-content: center;
 }
 
+.sponsor-logos img {
+  max-width: 150px;   /* or 200px if you prefer */
+  height: auto;
+  margin: 0.5rem;
+  display: block;
+}
+
 /* ─── FOOTER ─── */
 footer {
     text-align: center;
