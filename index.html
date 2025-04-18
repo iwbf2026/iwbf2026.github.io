@@ -31,16 +31,39 @@
     <img id="slideB" class="slide"              src="images/slide2.jpg" alt="Slide B">
   </div>
 
-  <!-- ─── MAIN CONTENT ─── -->
+  <!-- ─── THREE‑COLUMN SECTION ─── -->
   <main id="about">
-    <section>
-      <p>
-        The 2026 IEEE International Workshop on Biometrics and Forensics (IWBF 2026) will take place on April 23–24, 2026 at EURECOM on the beautiful Côte d’Azur (French Riviera). 
-        IWBF is an international forum devoted to facilitating synergies in research and development among multimedia forensics, forensic biometrics, and forensic science. 
-        State‑of‑the‑art research in biometrics, surveillance, multimedia forensics, and related areas will be showcased. 
-        The 14th edition of IWBF brings together practitioners and researchers—from industry, academia, and end‑users—working with advanced biometric technologies in forensic applications.
-      </p>
-    </section>
+    <div class="three-column">
+      <!-- About column -->
+      <div class="col about-col">
+        <h2>About</h2>
+        <p>
+          The 2026 IEEE International Workshop on Biometrics and Forensics (IWBF 2026) will take place on April 23–24, 2026 at EURECOM on the beautiful Côte d’Azur (French Riviera). 
+          IWBF is an international forum devoted to facilitating synergies in research and development among multimedia forensics, forensic biometrics, and forensic science. 
+          State‑of‑the‑art research in biometrics, surveillance, multimedia forensics, and related areas will be showcased. 
+          The 14th edition of IWBF brings together practitioners and researchers—from industry, academia, and end‑users—working with advanced biometric technologies in forensic applications.
+        </p>
+      </div>
+
+      <!-- Important Dates column -->
+      <div class="col dates-col">
+        <h2>Important Dates</h2>
+        <ul>
+          <li>Paper Submission Deadline: February 10, 2026</li>
+          <li>Notification of Acceptance: February 15, 2026</li>
+          <li>Camera‑Ready Submission: March 10, 2026</li>
+          <li>Workshop Dates: April 23–24, 2026</li>
+        </ul>
+      </div>
+
+      <!-- Sponsors placeholder column -->
+      <div class="col sponsors-col">
+        <h2>Partners &amp; Sponsors</h2>
+        <div class="sponsor-logos">
+          <!-- Sponsor logos will go here -->
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- ─── FOOTER ─── -->
@@ -56,7 +79,7 @@
       'images/slide3.jpg'
       // …add more as needed
     ];
-    const slideInterval = 5000; // total time per slide
+    const slideInterval = 5000; // time per slide
     let currentIndex = 0;
     let showingA = true;
 
@@ -65,27 +88,20 @@
 
     function nextSlide() {
       currentIndex = (currentIndex + 1) % slides.length;
-
       const currentImg = showingA ? slideA : slideB;
       const nextImg    = showingA ? slideB : slideA;
 
       nextImg.src = slides[currentIndex];
-
-      // restart zoom on incoming image
       nextImg.classList.remove('zoom');
       void nextImg.offsetWidth;
       nextImg.classList.add('zoom');
 
-      // cross‑fade
       currentImg.classList.remove('visible');
       nextImg.classList.add('visible');
-
       showingA = !showingA;
     }
 
-    // kick off initial zoom on first image
     slideA.addEventListener('load', () => slideA.classList.add('zoom'));
-
     setInterval(nextSlide, slideInterval);
   </script>
 </body>

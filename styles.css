@@ -185,3 +185,38 @@ footer {
 .slideshow img.zoom {
     animation: zoomIn 5s ease-in-out forwards;
 }
+
+/* ─── Three‑column layout ─── */
+.three-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.three-column .col {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.three-column h2 {
+  margin-top: 0;
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 768px) {
+  .three-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Placeholder styling for sponsor logos */
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
