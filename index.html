@@ -23,6 +23,11 @@
     </nav>
   </header>
 
+  <!-- slideshow -->
+  <div class="slideshow">
+    <img id="slideshow-image" src="images/slide1.jpg" alt="Slideshow frame">
+  </div>
+
   <main id="about">
     <section>
       <h2>About IWBF 2026</h2>
@@ -33,5 +38,33 @@
   <footer>
     <p>© 2026 IWBF | Hosted on <a href="https://github.com/iwbf2026/iwbf2026.github.io">GitHub Pages</a></p>
   </footer>
+
+  <script>
+    const slides = [
+      'images/slide1.jpg',
+      'images/slide2.jpg',
+      'images/slide3.jpg'
+      // …add as many filenames as you like
+    ];
+    const slideInterval = 5000; // milliseconds between slides
+    let current = 0;
+    const img = document.getElementById('slideshow-image');
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      img.src = slides[current];
+      // restart the zoom animation
+      img.classList.remove('zoom');
+      void img.offsetWidth;
+      img.classList.add('zoom');
+    }
+
+    // kick off the first zoom when the first image loads
+    img.addEventListener('load', () => img.classList.add('zoom'));
+
+    // then every interval swap & zoom
+    setInterval(nextSlide, slideInterval);
+  </script>
+
 </body>
 </html>
