@@ -23,10 +23,42 @@
     </nav>
   </header>
 
-  <!-- Slideshow -->
+  <!-- slideshow -->
   <div class="slideshow">
-    <img id="slideshow-image" src="images/slide1.jpg" alt="Slideshow frame">
+    <img
+      id="slideshow-image"
+      src="images/slide1.jpg"
+      alt="Slideshow frame"
+      class="zoom"
+    >
   </div>
+
+  <script>
+    const slides = [
+      'images/slide1.jpg',
+      'images/slide2.jpg',
+      'images/slide3.jpg'
+      // …etc.
+    ];
+    const slideInterval = 5000;  // 5s per slide
+    let current = 0;
+    const img = document.getElementById('slideshow-image');
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      img.src = slides[current];
+      // restart zoom animation
+      img.classList.remove('zoom');
+      void img.offsetWidth;
+      img.classList.add('zoom');
+    }
+
+    // kick off zoom on initial load
+    img.addEventListener('load', () => img.classList.add('zoom'));
+
+    setInterval(nextSlide, slideInterval);
+  </script>
+
 
   <main id="about">
     <section>

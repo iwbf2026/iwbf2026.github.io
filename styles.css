@@ -138,50 +138,28 @@ footer {
     }
 }
 
-/* ─── Slideshow Container ─── */
+/* slideshow container */
 .slideshow {
   position: relative;
   width: 100%;
-  height: 400px;           /* adjust as you like */
+  height: 400px;      /* adjust to taste */
   overflow: hidden;
-  margin-bottom: 2rem;     /* space before your content */
+  margin-bottom: 2rem;
 }
 
-/* base image styling + fade transition */
 .slideshow img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
   transform-origin: center center;
 }
 
-/* ─── Pan & Zoom Keyframes ─── */
-@keyframes panUp {
-  from { transform: scale(1) translateY(0); }
-  to   { transform: scale(1.1) translateY(-10%); }
-}
-@keyframes panDown {
-  from { transform: scale(1) translateY(0); }
-  to   { transform: scale(1.1) translateY(10%); }
-}
-@keyframes panLeft {
-  from { transform: scale(1) translateX(0); }
-  to   { transform: scale(1.1) translateX(-10%); }
-}
-@keyframes panRight {
-  from { transform: scale(1) translateX(0); }
-  to   { transform: scale(1.1) translateX(10%); }
+/* simple zoom‑in animation */
+@keyframes zoomIn {
+  from { transform: scale(1); }
+  to   { transform: scale(1.1); }
 }
 
-/* apply whichever pan you pick in JS */
-.panUp, .panDown, .panLeft, .panRight {
-  animation-duration: 5s;          /* match slideInterval */
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+.slideshow img.zoom {
+  animation: zoomIn 5s ease-in-out forwards;
 }
-.panUp    { animation-name: panUp; }
-.panDown  { animation-name: panDown; }
-.panLeft  { animation-name: panLeft; }
-.panRight { animation-name: panRight; }
