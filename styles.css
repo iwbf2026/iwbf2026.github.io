@@ -151,6 +151,16 @@ ul {
   text-align: center;
 }
 
+/* ─── Tighter spacing inside four‑column blocks ─── */
+.four-column .col h2 {
+  margin-bottom: 0.5rem;    /* shrink space below each heading */
+}
+
+.four-column .col p,
+.four-column .col ul {
+  margin-top: 0.25rem;      /* shrink space above paragraphs & lists */
+}
+
 /* placeholder styling for sponsor logos */
 .sponsor-logos {
     display: flex;
