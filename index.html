@@ -31,16 +31,16 @@
     <img id="slideB" class="slide"              src="images/slide2.jpg" alt="Slide B">
   </div>
 
-  <!-- ─── THREE‑COLUMN SECTION ─── -->
+  <!-- ─── FOUR‑COLUMN SECTION ─── -->
   <main id="about">
-    <div class="three-column">
+    <div class="four-column">
       <!-- About column -->
       <div class="col about-col">
         <h2>About</h2>
         <p>
-          The 2026 IEEE International Workshop on Biometrics and Forensics (IWBF 2026) will take place on April 23–24, 2026 at EURECOM on the beautiful Côte d’Azur (French Riviera). 
-          IWBF is an international forum devoted to facilitating synergies in research and development among multimedia forensics, forensic biometrics, and forensic science. 
-          State‑of‑the‑art research in biometrics, surveillance, multimedia forensics, and related areas will be showcased. 
+          The 2026 IEEE International Workshop on Biometrics and Forensics (IWBF 2026) will take place on April 23–24, 2026 at EURECOM on the beautiful Côte d’Azur (French Riviera).
+          IWBF is an international forum devoted to facilitating synergies in research and development among multimedia forensics, forensic biometrics, and forensic science.
+          State‑of‑the‑art research in biometrics, surveillance, multimedia forensics, and related areas will be showcased.
           The 14th edition of IWBF brings together practitioners and researchers—from industry, academia, and end‑users—working with advanced biometric technologies in forensic applications.
         </p>
       </div>
@@ -56,7 +56,7 @@
         </ul>
       </div>
 
-      <!-- Sponsors placeholder column -->
+      <!-- Sponsors column -->
       <div class="col sponsors-col">
         <h2>Partners &amp; Sponsors</h2>
         <div class="sponsor-logos">
@@ -64,15 +64,13 @@
         </div>
       </div>
 
-      <!-- News -->
+      <!-- News column -->
       <div class="col news-col">
         <h2>News</h2>
         <div class="news-items">
-          <!-- dynamically insert or manually list latest news headlines/links -->
           <p>No news yet…</p>
         </div>
       </div>
-
     </div>
   </main>
 
@@ -89,7 +87,7 @@
       'images/slide3.jpg'
       // …add more as needed
     ];
-    const slideInterval = 5000; // time per slide
+    const slideInterval = 5000; // total time per slide (ms)
     let currentIndex = 0;
     let showingA = true;
 
@@ -108,6 +106,7 @@
 
       currentImg.classList.remove('visible');
       nextImg.classList.add('visible');
+
       showingA = !showingA;
     }
 
