@@ -130,7 +130,7 @@ ul {
   grid-template-columns: repeat(4, minmax(0,1fr));
   gap: 2rem;
   margin: 0;
-  padding: 0.5rem 1rem;     /* keeps your gutters, but with box‑sizing it won’t overflow */
+  padding: 0rem 1rem;     /* keeps your gutters, but with box‑sizing it won’t overflow */
   box-sizing: border-box; /* include padding in its width calculation */
 }
 
