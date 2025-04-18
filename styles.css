@@ -43,22 +43,28 @@ header {
     text-align: center;
 }
 
-/* ─── “Real” Rounded Stamp ─── */
+/* ─── Circular “Stamp” ─── */
 .stamp {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  padding: 0.5em 1em;
+  width: 6rem;
+  height: 6rem;
   background: rgba(255, 0, 0, 0.1);
-  border: 2px dashed #d00;
-  border-radius: 8px;
+  border: 3px dashed #d00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #d00;
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
-  transform: rotate(10deg);
-  z-index: 1001;             /* on top of everything */
+  transform: rotate(15deg);
+  z-index: 1001;
   pointer-events: none;
+  text-align: center;
+  line-height: 1.1;
 }
 
 header h1 {
