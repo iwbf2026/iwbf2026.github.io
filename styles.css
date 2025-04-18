@@ -43,6 +43,23 @@ header {
     text-align: center;
 }
 
+/* the little “stamp” */
+.stamp {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid red;
+  color: red;
+  padding: 0.25em 0.5em;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: rotate(-15deg);
+  pointer-events: none;
+  z-index: 1001;  /* above everything in the header */
+}
+
 header h1 {
     font-size: 3.5rem;           /* ~56px */
     margin: 0.5rem 0;
