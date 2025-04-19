@@ -271,3 +271,44 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* 1) Make header a scroll‑context */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;                /* original header padding */
+  transition: padding 0.3s ease;  /* animate padding change */
+}
+
+/* 2) Group the “big” part */
+.header-top {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  max-height: 500px;  /* plenty to fit your h1/h2/p */
+  opacity: 1;
+}
+
+/* 3) Shrink header on scroll */
+#site-header.scrolled {
+  padding: 0;  /* collapse top/bottom padding entirely */
+}
+#site-header.scrolled .header-top {
+  max-height: 0;  /* collapse to zero height */
+  opacity: 0;     /* fade out */
+}
+
+/* 4) Ensure nav stays visible and nicely padded */
+#site-header nav {
+  background: radial-gradient(
+    circle at center,
+    var(--nav-bg-start) 0%,
+    var(--nav-bg-end)   100%
+  );
+  padding: 0.5rem 0;               /* smaller nav padding once header collapsed */
+  transition: padding 0.3s ease;
+}
+#site-header.scrolled nav {
+  padding: 0.5rem 0;               /* keep this or make it even tighter */
+}
+
