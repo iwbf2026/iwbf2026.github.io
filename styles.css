@@ -272,29 +272,3 @@ footer {
     }
 }
 
-/* ensure header and nav both stick at top */
-#site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* animate the top portion sliding up */
-.header-top {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* when scrolled, hide the top part */
-#site-header.scrolled .header-top {
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* keep nav visible and with its background */
-#site-header nav {
-  position: sticky;
-  top: 0;
-  background: white;   /* or your gradient if you like */
-  z-index: 1001;
-}
