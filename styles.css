@@ -300,3 +300,23 @@ footer {
   );
   z-index: 1001;
 }
+
+/* 1) Animate header padding */
+#site-header {
+  transition: padding 0.3s ease;
+}
+
+/* 2) Shrink header (light‑blue background) when scrolled */
+#site-header.scrolled {
+  padding: 0.25rem 0;    /* top/bottom padding only 0.25rem instead of 1rem */
+}
+
+/* 3) Pull the nav up closer to the top in the collapsed state */
+#site-header nav {
+  transition: margin 0.3s ease;
+}
+
+#site-header.scrolled nav {
+  margin-top: 0.25rem;   /* instead of 1.5rem */
+}
+
