@@ -149,25 +149,5 @@
     setInterval(nextSlide, slideInterval);
   </script>
 
-  <script>
-    const header = document.querySelector('header');
-    let lastScrollY = window.pageYOffset;
-
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.pageYOffset;
-
-      if (currentScrollY > lastScrollY) {
-        // scrolling down
-        header.classList.add('hide');
-      } else {
-        // scrolling up
-        header.classList.remove('hide');
-      }
-
-      lastScrollY = currentScrollY;
-    });
-  </script>
-
-  
 </body>
 </html>
