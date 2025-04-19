@@ -272,3 +272,31 @@ footer {
     }
 }
 
+/* Make header-top slide away on scroll, keep nav visible */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-top {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#site-header.scrolled .header-top {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Ensure nav still sticks with its background */
+#site-header nav {
+  position: sticky;
+  top: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--nav-bg-start) 0%,
+    var(--nav-bg-end) 100%
+  );
+  z-index: 1001;
+}
