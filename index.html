@@ -7,9 +7,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-RFGPNN3GZJ');
   </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IWBF 2026 – About</title>
@@ -19,11 +19,10 @@
   <!-- ─── HEADER & NAV ─── -->
   <header>
     <div class="stamp">Pending Approval</div>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     <h1>IWBF 2026</h1>
     <h2>14th IEEE International Workshop on Biometrics and Forensics</h2>
     <p>Côte d’Azur (French Riviera), EURECOM, April 23–24, 2026</p>
-    <nav class="mobile-nav">
+    <nav>
       <ul>
         <li><a href="index.html" class="active">About</a></li>
         <li><a href="callforpapers.html">Call for Papers</a></li>
@@ -51,6 +50,9 @@
         <p>
           The IEEE International Workshop on Biometrics and Forensics is a premier forum uniting industry, academia, and end‑users to showcase cutting‑edge research in multimedia forensics, biometric authentication, surveillance, and forensic science.
         </p>
+<!--         <p>
+          Join us April 23–24, 2026 at EURECOM on the stunning Côte d’Azur for the 14th edition of IWBF.
+        </p> -->
       </div>
 
       <!-- Important Dates column -->
@@ -67,9 +69,10 @@
       <!-- Sponsors column -->
       <div class="col sponsors-col">
         <h2>Partners &amp; Sponsors</h2>
-        <div class="sponsor-logos">
-          <img src="images/logo1.png" alt="Sponsor 1">
-          <img src="images/logo2.png" alt="Sponsor 2">
+          <div class="sponsor-logos">
+            <img src="images/logo1.png" alt="Sponsor 1">
+            <img src="images/logo2.png" alt="Sponsor 2">
+          <!-- add one <img> per logo -->
         </div>
       </div>
 
@@ -87,15 +90,6 @@
   <footer>
     <p>© 2026 IWBF</p>
   </footer>
-
-  <!-- ─── MENU TOGGLE SCRIPT ─── -->
-  <script>
-    document.querySelector('.menu-toggle')
-      .addEventListener('click', () => {
-        const ul = document.querySelector('nav.mobile-nav ul');
-        ul.style.display = ul.style.display === 'block' ? 'none' : 'block';
-      });
-  </script>
 
   <!-- ─── SLIDESHOW SCRIPT ─── -->
   <script>
@@ -116,6 +110,7 @@
       'images/slide14.jpg',
       'images/slide15.jpg',
       'images/slide16.jpg'
+      // …add more as needed
     ];
     const slideInterval = 5000; // time per slide (ms)
     let currentIndex = 0;
@@ -125,23 +120,33 @@
     const slideB = document.getElementById('slideB');
 
     function nextSlide() {
+      // move to the next slide in sequence
       currentIndex = (currentIndex + 1) % slides.length;
+
       const currentImg = showingA ? slideA : slideB;
       const nextImg    = showingA ? slideB : slideA;
 
+      // update the hidden image’s source
       nextImg.src = slides[currentIndex];
+
+      // restart the zoom animation
       nextImg.classList.remove('zoom');
-      void nextImg.offsetWidth;
+      void nextImg.offsetWidth;  // force reflow
       nextImg.classList.add('zoom');
 
+      // cross‑fade between images
       currentImg.classList.remove('visible');
       nextImg.classList.add('visible');
+
+      // flip for next time
       showingA = !showingA;
     }
 
+    // kick off the first zoom when slideA loads
     slideA.addEventListener('load', () => slideA.classList.add('zoom'));
+
+    // start cycling
     setInterval(nextSlide, slideInterval);
   </script>
-
 </body>
 </html>
