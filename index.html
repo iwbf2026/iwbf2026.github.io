@@ -153,18 +153,16 @@
   </script>
 
   <script>
-    (function() {
-      const header = document.getElementById('site-header');
-      const threshold = 100;  // px to scroll before collapsing
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > threshold) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
-    })();
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
   </script>
+
 
   
 </body>
