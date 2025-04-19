@@ -17,13 +17,11 @@
 </head>
 <body>
   <!-- ─── HEADER & NAV ─── -->
-  <header id="site-header">
-    <div class="header-top">
-      <div class="stamp">Pending Approval</div>
-      <h1>IWBF 2026</h1>
-      <h2>14th IEEE International Workshop on Biometrics and Forensics</h2>
-      <p>Côte d’Azur (French Riviera), EURECOM, April 23–24, 2026</p>
-    </div>
+  <header>
+    <div class="stamp">Pending Approval</div>
+    <h1>IWBF 2026</h1>
+    <h2>14th IEEE International Workshop on Biometrics and Forensics</h2>
+    <p>Côte d’Azur (French Riviera), EURECOM, April 23–24, 2026</p>
     <nav>
       <ul>
         <li><a href="index.html" class="active">About</a></li>
@@ -36,7 +34,6 @@
       </ul>
     </nav>
   </header>
-
 
   <!-- ─── CROSS‑FADE + ZOOM SLIDESHOW ─── -->
   <div class="slideshow">
@@ -151,19 +148,5 @@
     // start cycling
     setInterval(nextSlide, slideInterval);
   </script>
-
-  <script>
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  </script>
-
-
-  
 </body>
 </html>

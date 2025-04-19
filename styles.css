@@ -271,33 +271,3 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-
-/* ensure the header container sticks */
-#site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* make the “big” portion removable */
-.header-top {
-  transition: opacity 0.2s ease;
-}
-
-/* when scrolled, completely hide it */
-#site-header.scrolled .header-top {
-  display: none;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* keep the nav visible */
-#site-header nav {
-  background: radial-gradient(
-    circle at center,
-    var(--nav-bg-start) 0%,
-    var(--nav-bg-end)   100%
-  );
-}
-
-
