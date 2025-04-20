@@ -245,8 +245,14 @@ footer {
 }
 
 /* ─── RESPONSIVE & HAMBURGER MENU ─── */
+/* ─── Hide hamburger by default ─── */
+.menu-toggle {
+  display: none;
+}
+
+/* ─── Responsive & Hamburger Menu ─── */
 @media (max-width: 768px) {
-  /* 1) Show the hamburger button */
+  /* 1) Show the hamburger button only in mobile view */
   .menu-toggle {
     display: block;
     position: absolute;
@@ -259,14 +265,14 @@ footer {
     z-index: 1002;
   }
 
-  /* 2) Hide the nav by default */
+  /* 2) Nav switches to column layout */
   nav ul {
-    display: none;
-    flex-direction: column;
+    display: none;           /* hidden until toggled */
+    flex-direction: column;  /* column layout */
     gap: 1rem;
     background: #ffffff;
     position: absolute;
-    top: 100%;   /* place just below the header */
+    top: 100%;   /* just below header */
     left: 0;
     width: 100%;
     padding: 1rem;
@@ -278,23 +284,21 @@ footer {
     display: flex;
   }
 
-  /* 4) Tidy text sizes */
+  /* 4) Adjust header text sizing */
   header h1 {
-    font-size: 2rem;      /* ~32px */
+    font-size: 2rem;
   }
   header h2 {
-    font-size: 1.25rem;   /* ~20px */
+    font-size: 1.25rem;
   }
   header p {
-    font-size: 1rem;      /* ~16px */
+    font-size: 1rem;
   }
 
-  /* 5) Main padding smaller */
+  /* 5) Main padding & column stack */
   main {
     padding: 1rem;
   }
-
-  /* 6) Four‑column → single‑column */
   .four-column {
     grid-template-columns: 1fr;
   }
