@@ -193,11 +193,14 @@ ul {
     justify-content: center;
 }
 
+
+
 .sponsor-logos img {
-  max-width: 150px;   /* or 200px if you prefer */
-  height: auto;
-  margin: 0.5rem;
-  display: block;
+  max-width: 150px;    /* never wider than 150px */
+  max-height: 100px;   /* never taller than 100px */
+  width: auto;         /* let width scale to match height if needed */
+  height: auto;        /* let height scale to match width if needed */
+  object-fit: contain; /* if you force it into a box, preserve its ratio */
 }
 
 /* ─── FOOTER ─── */
