@@ -103,6 +103,10 @@
         </iframe>
       </div>
 
+      <div class="tour-container" data-src="https://my.web-visite.com/F1rEAPJTEz/12782276p&148.44h&90t">
+        <button class="tour-start">▶️ Start Virtual Tour</button>
+      </div>
+
       <!-- Map embed -->
       <div style="margin-top: 1rem;">
         <iframe
@@ -197,5 +201,24 @@
       header.classList.toggle('open');
     });
   </script>
+
+  <!-- JS (at bottom of page) -->
+  <script>
+    document.querySelector('.tour-start').addEventListener('click', function(){
+      const container = this.parentElement;
+      const iframe    = document.createElement('iframe');
+      iframe.src      = container.dataset.src;
+      iframe.width    = '100%';
+      iframe.height   = '450';
+      iframe.style.border = '0';
+      iframe.allowFullscreen = true;
+      iframe.loading  = 'lazy';
+      container.innerHTML = '';  // remove button
+      container.appendChild(iframe);
+    });
+  </script>
+
+
+
 </body>
 </html>
