@@ -241,7 +241,7 @@ footer {
 }
 
 .slideshow img.zoom {
-    animation: zoomIn 5s ease-in-out forwards;
+    animation: zoomIn 7.5s ease-in-out forwards;
 }
 
 /* ─── RESPONSIVE & HAMBURGER MENU ─── */
