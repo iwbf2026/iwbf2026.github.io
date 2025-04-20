@@ -18,6 +18,7 @@
 <body>
   <!-- ─── HEADER & NAV ─── -->
   <header>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     <h1>IWBF 2026</h1>
     <h2>14th IEEE International Workshop on Biometrics and Forensics</h2>
     <p>Côte d’Azur (French Riviera), EURECOM, April 23–24, 2026</p>
@@ -70,5 +71,13 @@
   <footer>
     <p>© 2026 IWBF</p>
   </footer>
+
+  <script>
+    const header = document.querySelector('header');
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      header.classList.toggle('open');
+    });
+  </script>
+
 </body>
 </html>
