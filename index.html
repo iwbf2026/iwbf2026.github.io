@@ -19,6 +19,7 @@
   <!-- ─── HEADER & NAV ─── -->
   <header>
     <div class="stamp">Pending Approval</div>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     <h1>IWBF 2026</h1>
     <h2>14th IEEE International Workshop on Biometrics and Forensics</h2>
     <p>Côte d’Azur, EURECOM, April 23–24, 2026</p>
@@ -148,6 +149,14 @@
     // start cycling
     setInterval(nextSlide, slideInterval);
   </script>
+
+  <script>
+    const header = document.querySelector('header');
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      header.classList.toggle('open');
+    });
+  </script>
+
 
 </body>
 </html>

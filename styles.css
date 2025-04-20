@@ -244,30 +244,58 @@ footer {
     animation: zoomIn 5s ease-in-out forwards;
 }
 
-/* ─── RESPONSIVE ADJUSTMENTS ─── */
+/* ─── RESPONSIVE & HAMBURGER MENU ─── */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
+  /* 1) Show the hamburger button */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1002;
+  }
 
-    header h1 {
-        font-size: 2.0rem;      /* ~40px */
-    }
+  /* 2) Hide the nav by default */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: #ffffff;
+    position: absolute;
+    top: 100%;   /* place just below the header */
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
 
-    header h2 {
-        font-size: 1.25rem;      /* ~24px */
-    }
+  /* 3) When header has .open, show the menu */
+  header.open nav ul {
+    display: flex;
+  }
 
-    header p {
-        font-size: 1rem;        /* ~16px */
-    }
+  /* 4) Tidy text sizes */
+  header h1 {
+    font-size: 2rem;      /* ~32px */
+  }
+  header h2 {
+    font-size: 1.25rem;   /* ~20px */
+  }
+  header p {
+    font-size: 1rem;      /* ~16px */
+  }
 
-    main {
-        padding: 1rem;
-    }
+  /* 5) Main padding smaller */
+  main {
+    padding: 1rem;
+  }
 
-    .four-column {
-        grid-template-columns: 1fr;
-    }
+  /* 6) Four‑column → single‑column */
+  .four-column {
+    grid-template-columns: 1fr;
+  }
 }
