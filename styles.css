@@ -306,3 +306,27 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.registration-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+.registration-table th,
+.registration-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.registration-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.registration-note {
+  margin-top: 1em;
+  font-size: 0.95em;
+  color: #444;
+}
