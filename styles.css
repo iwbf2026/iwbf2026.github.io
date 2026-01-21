@@ -388,13 +388,19 @@ footer {
 
 /* Sponsors hierarchy */
 .sponsor-main img {
-  max-width: 220px;   /* bigger top sponsor */
-  max-height: 120px;
+  max-width: 300px;   /* bigger main sponsor */
+  max-height: 160px;
+}
+
+/* space between main sponsor and others */
+.sponsor-main {
+  margin-bottom: 1.5rem;  /* vertical gap */
 }
 
 .sponsor-secondary img {
-  max-width: 150px;   /* standard sponsor size */
-  max-height: 100px;
+  max-width: 180px;   /* secondary sponsor */
+  max-height: 120px;
 }
+
 
 
