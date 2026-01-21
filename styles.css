@@ -402,5 +402,15 @@ footer {
   max-height: 120px;
 }
 
+.sponsor-logos a img {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sponsor-logos a:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
 
 
