@@ -386,3 +386,15 @@ footer {
   }
 }
 
+/* Sponsors hierarchy */
+.sponsor-main img {
+  max-width: 220px;   /* bigger top sponsor */
+  max-height: 120px;
+}
+
+.sponsor-secondary img {
+  max-width: 150px;   /* standard sponsor size */
+  max-height: 100px;
+}
+
+
