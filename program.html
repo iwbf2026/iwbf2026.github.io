@@ -15,6 +15,44 @@
   <title>IWBF 2026 – Program</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <style>
+    .schedule-table,
+    .papers-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem 0;
+    }
+
+    .schedule-table td,
+    .schedule-table th,
+    .papers-table td,
+    .papers-table th {
+      border: 1px solid #bfc7d1;
+      padding: 10px 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .schedule-table th,
+    .papers-table th {
+      background: #f3f6fa;
+    }
+
+    .schedule-table td:first-child {
+      width: 170px;
+      white-space: nowrap;
+    }
+
+    .papers-table td:first-child {
+      width: 34%;
+    }
+
+    .session-title {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -51,7 +89,7 @@
 <section>
   <h3>Thursday, April 23, 2026</h3>
 
-  <table>
+  <table class="schedule-table">
     <tbody>
       <tr><td><strong>08:30</strong></td><td>Registration &amp; Coffee</td></tr>
       <tr><td><strong>09:15</strong></td><td>Opening</td></tr>
@@ -63,7 +101,7 @@
       <tr>
         <td><strong>11:15–12:00</strong></td>
         <td>
-          <strong>Keynote — John Howard (The Maryland Test Facility and the AT&T Center - Southern Methodist University, USA)</strong><br>
+          <strong>Keynote — John Howard (The Maryland Test Facility and the AT&amp;T Center - Southern Methodist University, USA)</strong><br>
           <em>Fairness in Forensic Face Recognition: What We Get Wrong, Why It Happens, and How to Fix It</em>
         </td>
       </tr>
@@ -84,7 +122,7 @@
 
       <tr><td><strong>15:45–15:50</strong></td><td>Poster Pitch Presentations</td></tr>
       <tr><td><strong>15:50–16:15</strong></td><td>Coffee Break</td></tr>
-      <tr><td><strong>16:15–17:45</strong></td><td>Poster Session</td></tr>
+      <tr><td><strong>16:15–17:45</strong></td><td><strong>Poster Session</strong></td></tr>
 
       <tr><td><strong>17:45</strong></td><td>End of Day 1</td></tr>
 
@@ -99,79 +137,176 @@
     </tbody>
   </table>
 
-  <!-- SESSION 1 -->
-  <ul>
-    <li>
-      <em>A Skin Tone Annotated Face Image Dataset for Studying Demographic Variability</em><br>
-      Christoph Busch, Paul Kibler, Fabian Stockhardt, Christian Rathgeb (Hochschule Darmstadt, Germany)
-    </li>
-    <li>
-      <em>Fair-Gate: Fairness-Aware Interpretable Risk Gating for Sex-Fair Voice Biometrics</em><br>
-      Yangyang Qu, Massimiliano Todisco, Chiara Galdi, Nicholas Evans (EURECOM, France)
-    </li>
-    <li>
-      <em>Feature-based Identity Unlearning Evaluation for Biometric Applications</em><br>
-      Iurii Medvedev, Ajnas Muhammed, Nuno Gonçalves (University of Coimbra, Portugal)
-    </li>
-    <li>
-      <em>MLLM-based Textual Explanations for Face Comparison</em><br>
-      Redwan Sony, Anil K. Jain, Arun Ross (Michigan State University, USA)
-    </li>
-  </ul>
+  <h4 class="session-title">Oral Session 1 — Trustworthiness, Fairness and Explainability</h4>
+  <table class="papers-table">
+    <thead>
+      <tr>
+        <th>Paper</th>
+        <th>Authors and affiliations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>A Skin Tone Annotated Face Image Dataset for Studying Demographic Variability</em></td>
+        <td>Christoph Busch, Paul Kibler, Fabian Stockhardt, Christian Rathgeb (Hochschule Darmstadt, Germany)</td>
+      </tr>
+      <tr>
+        <td><em>Fair-Gate: Fairness-Aware Interpretable Risk Gating for Sex-Fair Voice Biometrics</em></td>
+        <td>Yangyang Qu, Massimiliano Todisco, Chiara Galdi, Nicholas Evans (EURECOM, France)</td>
+      </tr>
+      <tr>
+        <td><em>Feature-based Identity Unlearning Evaluation for Biometric Applications</em></td>
+        <td>Iurii Medvedev, Ajnas Muhammed, Nuno Gonçalves (University of Coimbra, Portugal)</td>
+      </tr>
+      <tr>
+        <td><em>MLLM-based Textual Explanations for Face Comparison</em></td>
+        <td>Redwan Sony, Anil K. Jain, Arun Ross (Michigan State University, USA)</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <!-- SESSION 2 -->
-  <ul>
-    <li>
-      <em>Impact of Face Swapping Attacks on ID Card Presentation Attack Detection</em><br>
-      Daniel Schulz, Sebastian Gonzalez (ID VisionCenter, Germany), Juan Tapia (Hochschule Darmstadt, Germany)
-    </li>
-    <li>
-      <em>MADs in Hand: Analysis of Score-level Fusion Rules for Single-Image Morphing Attack Detection</em><br>
-      Andrea Panzino, Simone Maurizio La Cava, Marco Micheletto, Giulia Orrù, Roberto Casula (University of Cagliari, Italy),
-      Federico Lama (DEDEM S.p.A., Italy), Gian Luca Marcialis (University of Cagliari, Italy)
-    </li>
-    <li>
-      <em>Structured Batching for One-Class Learning in Audio Replay Spoofing Detection</em><br>
-      José Carlos Sánchez Valera, Antonio Miguel Peinado Herreros, Ángel Manuel Gómez García (University of Granada, Spain),
-      Juan Manuel Martín Doñas (University of La Laguna, Spain)
-    </li>
-    <li>
-      <em>HCSI-Net: Hierarchical Cross-Stream Interaction for Generalizable Deepfake Detection</em><br>
-      Marko Brodarič, Marija Ivanovska (University of Ljubljana, Slovenia), 
-      Deepak Jain (Dalian University of Technology, China),
-      Peter Peer, Vitomir Štruc (University of Ljubljana, Slovenia)
-    </li>
-  </ul>
+  <h4 class="session-title">Oral Session 2 — Presentation Attack and Deepfake Detection I</h4>
+  <table class="papers-table">
+    <thead>
+      <tr>
+        <th>Paper</th>
+        <th>Authors and affiliations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>Impact of Face Swapping Attacks on ID Card Presentation Attack Detection</em></td>
+        <td>Daniel Schulz, Sebastian Gonzalez (ID VisionCenter, Chile), Juan Tapia (Hochschule Darmstadt, Germany)</td>
+      </tr>
+      <tr>
+        <td><em>MADs in Hand: Analysis of Score-level Fusion Rules for Single-Image Morphing Attack Detection</em></td>
+        <td>Andrea Panzino, Simone Maurizio La Cava, Marco Micheletto, Giulia Orrù, Roberto Casula (University of Cagliari, Italy), Federico Lama (DEDEM S.p.A., Italy), Gian Luca Marcialis (University of Cagliari, Italy)</td>
+      </tr>
+      <tr>
+        <td><em>Structured Batching for One-Class Learning in Audio Replay Spoofing Detection</em></td>
+        <td>José Carlos Sánchez Valera, Antonio Miguel Peinado Herreros, Ángel Manuel Gómez García (University of Granada, Spain), Juan Manuel Martín Doñas (University of La Laguna, Spain)</td>
+      </tr>
+      <tr>
+        <td><em>HCSI-Net: Hierarchical Cross-Stream Interaction for Generalizable Deepfake Detection</em></td>
+        <td>Marko Brodarič, Marija Ivanovska (University of Ljubljana, Slovenia), Deepak Jain (Dalian University of Technology, China), Peter Peer, Vitomir Štruc (University of Ljubljana, Slovenia)</td>
+      </tr>
+    </tbody>
+  </table>
 
-<!-- SESSION 3 -->
-<ul>
-  <li>
-    <em>Optimizing Lossy Image Compression for Face Recognition within 1024 Bytes</em><br>
-    Paul Andreas, Torsten Schlett, Christoph Busch (Hochschule Darmstadt, Germany)
-  </li>
-  <li>
-    <em>Investigation of Various Label Correction Schemes for the Self-Supervised Speaker Verification Task</em><br>
-    Abderrahim Fathan, Jahangir Alam (CRIM, Canada)
-  </li>
-  <li>
-    <em>Continual Few-shot Adaptation for Synthetic Fingerprint Detection</em><br>
-    Joseph Geo Benjamin, Anil K. Jain, Karthik Nandakumar (Michigan State University, USA)
-  </li>
-  <li>
-    <em>Mixing Data Augmentation for Robust Replay Attack Detection with Real Telephonic Speech</em><br>
-    Kaleem Kashif, Ángel M. Gómez García, José Carlos Sánchez Valera, Iván López-Espejo (University of Granada, Spain),
-    Iñigo Orbegozo-Torrano, Andoni Larumbe-Bergera, José Luis González-de-Suso (Veridas, Spain),
-    Antonio M. Peinado (University of Granada, Spain)
-  </li>
-</ul>
+  <h4 class="session-title">Oral Session 3 — Learning Strategies and System Robustness</h4>
+  <table class="papers-table">
+    <thead>
+      <tr>
+        <th>Paper</th>
+        <th>Authors and affiliations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>Optimizing Lossy Image Compression for Face Recognition within 1024 Bytes</em></td>
+        <td>Paul Andreas, Torsten Schlett, Christoph Busch (Hochschule Darmstadt, Germany)</td>
+      </tr>
+      <tr>
+        <td><em>Investigation of Various Label Correction Schemes for the Self-Supervised Speaker Verification Task</em></td>
+        <td>Abderrahim Fathan, Jahangir Alam (CRIM, Canada)</td>
+      </tr>
+      <tr>
+        <td><em>Continual Few-shot Adaptation for Synthetic Fingerprint Detection</em></td>
+        <td>Joseph Geo Benjamin, Anil K. Jain, Karthik Nandakumar (Michigan State University, USA)</td>
+      </tr>
+      <tr>
+        <td><em>Mixing Data Augmentation for Robust Replay Attack Detection with Real Telephonic Speech</em></td>
+        <td>Kaleem Kashif, Ángel M. Gómez García, José Carlos Sánchez Valera, Iván López-Espejo (University of Granada, Spain), Iñigo Orbegozo-Torrano, Andoni Larumbe-Bergera, José Luis González-de-Suso (Veridas, Spain), Antonio M. Peinado (University of Granada, Spain)</td>
+      </tr>
+    </tbody>
+  </table>
 
+  <h4 class="session-title">Poster Session</h4>
+  <table class="papers-table">
+    <thead>
+      <tr>
+        <th>Paper</th>
+        <th>Authors and affiliations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>Assessing the Reliability of Deep Learning-Based Voice Comparison Models for Critical Decisions</em></td>
+        <td>Pierre-Michel Bousquet (Avignon University, France), Mickael Rouvier (LIA, Avignon Université, France)</td>
+      </tr>
+      <tr>
+        <td><em>Comparison of Unsupervised Dimensionality Reduction Methods for Fully Homomorphic Encrypted Facial Verification</em></td>
+        <td>Heitor Nolla (LIDS/Griaule Biometrics, Brazil), André Gradvohl (Faculdade de Tecnologia - Unicamp, Brazil)</td>
+      </tr>
+      <tr>
+        <td><em>HQSwap: A Challenging High-Resolution Face-Swap Dataset for Improved Manipulation Detection</em></td>
+        <td>Philipp Srock, Juan Tapia, Christoph Busch (Hochschule Darmstadt, Germany)</td>
+      </tr>
+      <tr>
+        <td><em>Finger Vein Recognition under AI-Based Image Compression Schemes</em></td>
+        <td>Christof Kauba, Andreas Uhl, Gerald Angerer (University of Salzburg, Austria)</td>
+      </tr>
+      <tr>
+        <td><em>Finger Position Classification with Assignment Optimization</em></td>
+        <td>Saulo De Matos Silva, Glauco Pedrosa (University of Brasilia, Brazil)</td>
+      </tr>
+      <tr>
+        <td><em>LEXICON: Mixture-of-Experts Feature Selection for Latent Fingerprint Quality</em></td>
+        <td>Anshal Khatri, Anil Sao (Indian Institute of Technology Bhilai, India), Arvind Sharma, Raghavendra Ramachandra (Norwegian University of Science and Technology, Gjøvik, Norway)</td>
+      </tr>
+      <tr>
+        <td><em>Pushbroom Satellite Source Identification Using PRNU: A Sentinel-2 Application</em></td>
+        <td>Matthieu Serfaty, Marina Gardella, Carlo de Franchis, Rafael Grompone von Gioi (Centre Borelli, ENS Paris-Saclay, France), Quentin Bammey (Télécom Paris, LTCI, France)</td>
+      </tr>
+      <tr>
+        <td><em>On the Impact of Combining Defenses against Adversarial Patches in Face Recognition</em></td>
+        <td>Sander Joos, Max Van Rompaey, Willem Verheyen, Davy Preuveneers, Wouter Joosen (DistriNet, KU Leuven, Belgium)</td>
+      </tr>
+      <tr>
+        <td><em>SRL-MAD: Structured Residual Latents for One-Class Morphing Attack Detection</em></td>
+        <td>Diogo J. Paulo, Hugo Proença, João C. Neves (University of Beira Interior, Portugal)</td>
+      </tr>
+      <tr>
+        <td><em>The Good, the Better, and the Best: Improving the Discriminability of Face Embeddings through Attribute-Aware Learning</em></td>
+        <td>Ana Dias (Universidade da Beira Interior, Portugal), João Ribeiro Pinto (Amadeus, Portugal), Hugo Proença, João C. Neves (University of Beira Interior, Portugal)</td>
+      </tr>
+      <tr>
+        <td><em>Exploring Capabilities of Vision Language Models to Perform Explainable Face Image Quality Assessments</em></td>
+        <td>Ana Real, Christoph Busch, Christian Rathgeb (Hochschule Darmstadt, Germany)</td>
+      </tr>
+      <tr>
+        <td><em>Multi-Sample Compression of Fingerprints: Can It Be Done?</em></td>
+        <td>Kevin Schörgnhofer, Andreas Unterweger, Andreas Uhl (University of Salzburg, Austria)</td>
+      </tr>
+      <tr>
+        <td><em>BPP-IG: Bit-per-Pixel Data Poisoning Attack Using Integrated Gradients</em></td>
+        <td>Stefania Bello, Donato Impedovo (University of Bari "Aldo Moro", Italy)</td>
+      </tr>
+      <tr>
+        <td><em>Query-Conditioned Multi-Token Attention for Re-Ranking in Segmentation-Free KWS</em></td>
+        <td>Angelos Giotis, Stergios Papazis, Christophoros Nikou (University of Ioannina, Greece)</td>
+      </tr>
+      <tr>
+        <td><em>Biometric Identification with Functional Encryption (BIFACE)</em></td>
+        <td>Hervé Chabanne (Idemia, France), Alberto Ibarrondo (Arcium, The Netherlands)</td>
+      </tr>
+      <tr>
+        <td><em>Iris Through the Looking Glass: Filter-Based Privacy-Preserving Identification</em></td>
+        <td>Christina Karakosta, William J. Knottenbelt (Imperial College London, United Kingdom)</td>
+      </tr>
+      <tr>
+        <td><em>Privacy-by-Architecture for Passenger Counting in Growing Economies</em></td>
+        <td>Nthenya Kyatha (University of Massachusetts Amherst, USA)</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <!-- ================= DAY 2 ================= -->
 <section>
   <h3>Friday, April 24, 2026</h3>
 
-  <table>
+  <table class="schedule-table">
     <tbody>
       <tr><td><strong>09:30</strong></td><td>Registration &amp; Coffee</td></tr>
       <tr><td><strong>09:55</strong></td><td>Opening</td></tr>
@@ -201,68 +336,85 @@
     </tbody>
   </table>
 
-  <!-- SESSION 4 -->
-  <ul>
-    <li>
-      <em>Dark Signal Non-Uniformity for Source Camera Identification</em><br>
-      Julieta Umpierrez, Marina Gardella, Rafael Grompone (ENS Paris-Saclay, France),
-      Pablo Musé (Universidad de la República, Uruguay),
-      Jean-Michel Morel (Lingnan University, Hong Kong)
-    </li>
-    <li>
-      <em>Detecting Double Compression in HEVC Videos via Neural Attention and Bitstream Analysis</em><br>
-      Syamantak Sarkar (University of Caen Normandy, France)
-    </li>
-    <li>
-      <em>Image Quality Assessment of Identity Cards Using Measures from Open Face Image Quality</em><br>
-      Gregor Grote, Juan Tapia, Christian Rathgeb (Hochschule Darmstadt, Germany)
-    </li>
-    <li>
-      <em>Exploring Vision-Language Models for Online Signature Verification: A Zero-Shot Capability Study</em><br>
-      Marta Robledo-Moreno, Ruben Vera-Rodriguez, Ruben Tolosana, Javier Ortega-Garcia (Universidad Autónoma de Madrid, Spain)
-    </li>
-  </ul>
+  <h4 class="session-title">Oral Session 4 — Multimedia Analysis and Emerging Applications</h4>
+  <table class="papers-table">
+    <thead>
+      <tr>
+        <th>Paper</th>
+        <th>Authors and affiliations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>Dark Signal Non-Uniformity for Source Camera Identification</em></td>
+        <td>Julieta Umpierrez, Marina Gardella, Rafael Grompone (ENS Paris-Saclay, France), Pablo Musé (Universidad de la República, Uruguay), Jean-Michel Morel (Lingnan University, Hong Kong)</td>
+      </tr>
+      <tr>
+        <td><em>Detecting Double Compression in HEVC Videos via Neural Attention and Bitstream Analysis</em></td>
+        <td>Syamantak Sarkar (University of Caen Normandy, France)</td>
+      </tr>
+      <tr>
+        <td><em>Image Quality Assessment of Identity Cards Using Measures from Open Face Image Quality</em></td>
+        <td>Gregor Grote, Juan Tapia, Christian Rathgeb (Hochschule Darmstadt, Germany)</td>
+      </tr>
+      <tr>
+        <td><em>Exploring Vision-Language Models for Online Signature Verification: A Zero-Shot Capability Study</em></td>
+        <td>Marta Robledo-Moreno, Ruben Vera-Rodriguez, Ruben Tolosana, Javier Ortega-Garcia (Universidad Autónoma de Madrid, Spain)</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <!-- SESSION 5 -->
-  <ul>
-    <li>
-      <em>Neural Encoding Detection is Not All You Need for Synthetic Speech Detection</em><br>
-      Luca Cuccovillo, Milica Gerhardt, Patrick Aichroth (Fraunhofer IDMT, Germany),
-      Xin Wang (National Institute of Informatics, Japan)
-    </li>
-    <li>
-      <em>Illumination-Aware Contactless Fingerprint Spoof Detection via Paired Flash–Non-Flash Imaging</em><br>
-      Roja Sahoo, Anoop Namboodiri (IIIT Hyderabad, India)
-    </li>
-    <li>
-      <em>Beyond the Ridge: Towards Chemically Augmented Forensic Biometrics</em><br>
-      Rudolf Haraksim, Camilla Marzuoli, Jannis Priesnitz, Francesco Fumagalli, Laurent Beslay (European Commission JRC, EU)
-    </li>
-  </ul>
+  <h4 class="session-title">Oral Session 5 — Position Papers: Challenges and Perspectives</h4>
+  <table class="papers-table">
+    <thead>
+      <tr>
+        <th>Paper</th>
+        <th>Authors and affiliations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>Neural Encoding Detection is Not All You Need for Synthetic Speech Detection</em></td>
+        <td>Luca Cuccovillo, Milica Gerhardt, Patrick Aichroth (Fraunhofer IDMT, Germany), Xin Wang (National Institute of Informatics, Japan)</td>
+      </tr>
+      <tr>
+        <td><em>Illumination-Aware Contactless Fingerprint Spoof Detection via Paired Flash–Non-Flash Imaging</em></td>
+        <td>Roja Sahoo, Anoop Namboodiri (IIIT Hyderabad, India)</td>
+      </tr>
+      <tr>
+        <td><em>Beyond the Ridge: Towards Chemically Augmented Forensic Biometrics</em></td>
+        <td>Rudolf Haraksim, Camilla Marzuoli, Jannis Priesnitz, Francesco Fumagalli, Laurent Beslay (European Commission Joint Research Centre, European Union)</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <!-- SESSION 6 -->
-  <ul>
-    <li>
-      <em>Interpreting SSL Representations for Spoof Detection: a WavLM Study</em><br>
-      Mallat Mohamed, Michele Panariello, Massimiliano Todisco, Nicholas Evans (EURECOM, France),
-      Anthony Larcher (LIUM, France)
-    </li>
-    <li>
-      <em>Evaluating Open-Source Large Vision-Language Models for Face Presentation Attack Detection</em><br>
-      Camilo Linares Caceres, Marta Gomez-Barrero (Universität der Bundeswehr München, Germany)
-    </li>
-    <li>
-      <em>Enhancing Multi-Corpus Training in SSL-Based Anti-Spoofing Models: Domain-Invariant Feature Extraction</em><br>
-      Anh-Tuan Dao, Driss Matrouf, Mickael Rouvier (LIA, France),
-      Nicholas Evans (EURECOM, France)
-    </li>
-    <li>
-      <em>Find the Differences: Differential Morphing Attack Detection vs Face Recognition</em><br>
-      Una Kelly (University of Münster, Germany),
-      Luuk Spreeuwers, Raymond Veldhuis (University of Twente, Netherlands)
-    </li>
-  </ul>
-
+  <h4 class="session-title">Oral Session 6 — Presentation Attack and Deepfake Detection II</h4>
+  <table class="papers-table">
+    <thead>
+      <tr>
+        <th>Paper</th>
+        <th>Authors and affiliations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>Interpreting SSL Representations for Spoof Detection: a WavLM Study</em></td>
+        <td>Mallat Mohamed, Michele Panariello, Massimiliano Todisco, Nicholas Evans (EURECOM, France), Anthony Larcher (LIUM, France)</td>
+      </tr>
+      <tr>
+        <td><em>Evaluating Open-Source Large Vision-Language Models for Face Presentation Attack Detection</em></td>
+        <td>Camilo Linares Caceres, Marta Gomez-Barrero (Universität der Bundeswehr München, Germany)</td>
+      </tr>
+      <tr>
+        <td><em>Enhancing Multi-Corpus Training in SSL-Based Anti-Spoofing Models: Domain-Invariant Feature Extraction</em></td>
+        <td>Anh-Tuan Dao, Driss Matrouf, Mickael Rouvier (LIA, France), Nicholas Evans (EURECOM, France)</td>
+      </tr>
+      <tr>
+        <td><em>Find the Differences: Differential Morphing Attack Detection vs Face Recognition</em></td>
+        <td>Una Kelly (University of Münster, Germany), Luuk Spreeuwers, Raymond Veldhuis (University of Twente, The Netherlands)</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 </main>
